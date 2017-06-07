@@ -2,12 +2,12 @@ var Discordie = require("discordie");
 var fs = require("fs");
 var client = new Discordie();
 
-var CUSTOM_GAMES_CHANNEL = '321291281886347264';
+var CUSTOM_GAMES_CHANNEL = '317770788524523531';
 
 var channel = client.Channels.get(CUSTOM_GAMES_CHANNEL);
 
 client.connect({
-  token: "MzIxMjkxMTA3MjU2MzY5MTUy.DBcD7A.PAETs7zZQsNDdGmHEmjp_kPaQMA"
+  token: "MzIxMjkxMTA3MjU2MzY5MTUy.DBmbBQ.yvu2WKu9d_bw_5p-cztqAmZJJR8"
 });
 
 client.Dispatcher.on("GATEWAY_READY", e => {
@@ -51,8 +51,8 @@ function customGameModes(e){
 				if(arr.indexOf(randomnumber) > -1) continue;
 				arr[arr.length] = randomnumber;
 			}
-			channel = client.Channels.get(CUSTOM_GAMES_CHANNEL);
-			channel.sendMessage("<:LUL:292346710070525952> " + textByLine[arr[1]]+ "\n"+ "<:Wowee:298846015014961153> " + textByLine[arr[2]] + "\n" + "<:Kreygasm:294170282950787082> " +textByLine[arr[3]]).then(function (message) {
+			//channel = client.Channels.get(CUSTOM_GAMES_CHANNEL);
+			e.message.channel.sendMessage("<:LUL:292346710070525952> " + textByLine[arr[1]]+ "\n"+ "<:Wowee:298846015014961153> " + textByLine[arr[2]] + "\n" + "<:Kreygasm:294170282950787082> " +textByLine[arr[3]]).then(function (message) {
 			  message.addReaction(":LUL:292346710070525952");
 			  message.addReaction(":Wowee:298846015014961153");
 			  message.addReaction(":Kreygasm:294170282950787082");
@@ -68,8 +68,8 @@ function customGameModes(e){
 /* poll for team sizes, currently polls for 1,2,4,6,8 */
 
 function customTeamSize(e){
-	channel = client.Channels.get(CUSTOM_GAMES_CHANNEL);
-	channel.sendMessage("Vote for squad sizes below").then(function (message) {
+	//channel = client.Channels.get(CUSTOM_GAMES_CHANNEL);
+	e.message.channel.sendMessage("Vote for squad sizes below").then(function (message) {
 		message.addReaction("\u0031\u20E3");
 		message.addReaction("\u0032\u20E3");
 		message.addReaction("\u0034\u20E3");
@@ -83,8 +83,8 @@ function customTeamSize(e){
 /* polls for custom vehicles (uses custom YES and NO emotes) */
 
 function customVehicles(e){
-	channel = client.Channels.get(CUSTOM_GAMES_CHANNEL);
-	channel.sendMessage("Should there be vehicles?").then(function (message) {
+	//channel = client.Channels.get(CUSTOM_GAMES_CHANNEL);
+	e.message.channel.sendMessage("Should there be vehicles?").then(function (message) {
 		message.addReaction(":YES:318081582579712000");
 		message.addReaction(":NO:318081582344830979");
 	}).catch(function() {
@@ -127,6 +127,12 @@ client.Dispatcher.on("MESSAGE_CREATE", e => {
 			customGameModes(e);	
 			customTeamSize(e);
 			customVehicles(e);
+	  	}else{
+			alertNotAMod(e);
+		}
+	  }else if(e.message.content == "!customhelp"){
+		if(authenticateUser(e.message.member)){
+		 e.message.channel.sendMessage("Supported commands: \n!nextcustom - chooses 3 random game modes for voting \n!teamsize - polls for team sizes \n!vehicles - polls for using vehicles  \n!fullcustom - executes nextcustom, teamsize, and vehicles commands");
 	  	}else{
 			alertNotAMod(e);
 		}
