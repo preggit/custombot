@@ -1,0 +1,19 @@
+Sniper's Elite: Snipers only / No crates
+Rust: Snipers only / First person / 2x Crates	
+Crossbow'N'Throw: 3x Crossbow / 3x Grenades /  No crates
+OnlyUseMeNade: Throwables only / No Vehicles / 1.3x circle speed
+East Clintwood: Pistols only (3x) / No Vehicles
+King of the Crate: Pistols only / 5x crate drops / 0.5 Vehicles
+Where Is My Superloot?! : 3x all loot and attachments / No Vehicles / 1.2x circle speed
+Boomstick Showdown: Shotgun only / No crates / 1.2x circle speed
+Michael Bae: 5x Red Zone / Throwables only / 2x circle speed
+Shoot me once: Shotguns and Snipers / No Drops / Attachments x3
+Weapon Experts: 3x all guns / No Armor / No Helmets
+Man vs Machine: Cars / Assault Rifle Only / 3x attachments
+Friends with Med-i-kits: 2x Meds / Pistols only / No backpacks
+SMGeez Louise: SMG only / No Sights / No Crates / 1.5x circle speed
+Sniper No Sniping: 3x Sniper only / No Sights / No Crates / 1.2x circle speed
+Melee Madness: Melee only / 1.5x circle speed / No Crates
+Clom Tancey: First Person / SMG, Pistols & Crossbows/ 3x muzzle (for silencers) / Rainy
+Ironman Mode: No attachments / No Vehicles / No Meds 
+Hell on earth: 5x red zone / Melee only / No Vehicles / 1.5x circle speed
